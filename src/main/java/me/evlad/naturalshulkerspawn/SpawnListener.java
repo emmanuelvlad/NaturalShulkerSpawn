@@ -34,12 +34,17 @@ public class SpawnListener implements Listener {
                     || new Random().nextDouble() > config.getDouble("spawning-chance") / 100D)
                 return;
 
-            List<Material> spawnableSurfaces = config.getStringList("spawning-surfaces")
+            List<Material> spawnableSurfaces = config.getStringList("spawnable-surfaces")
+                    .stream()
+                    .map(Material::valueOf)
+                    .collect(Collectors.toList());
+            List<Material> spawnableSurfacesBlacklist = config.getStringList("spawnable-surfaces-blacklist")
                     .stream()
                     .map(Material::valueOf)
                     .collect(Collectors.toList());
             Block spawnedOnBlock = spawnLocationWorld.getBlockAt(spawnLocation.getBlockX(), spawnLocation.getBlockY() - 1, spawnLocation.getBlockZ());
-            if (!spawnableSurfaces.contains(spawnedOnBlock.getBlockData().getMaterial()) && spawnableSurfaces.size() > 0)
+            Material spawnedOnMaterial = spawnedOnBlock.getBlockData().getMaterial();
+            if ((!spawnableSurfaces.contains(spawnedOnMaterial) && spawnableSurfaces.size() > 0) || spawnableSurfacesBlacklist.contains(spawnedOnMaterial))
                 return;
 
             event.setCancelled(true);

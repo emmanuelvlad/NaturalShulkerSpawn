@@ -6,5 +6,7 @@ spawning-chance: 1
 # spawnable-surfaces: [] # To set on all surfaces
 spawnable-surfaces:
   - PURPUR_BLOCK
+# Surfaces blacklist same as above
+spawnable-surfaces-blacklist: []
 # Should break the block under it after spawning?
 break-surface-on-spawn: false
