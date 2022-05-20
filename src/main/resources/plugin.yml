@@ -1,0 +1,15 @@
+name: NaturalShulkerSpawn
+version: '${project.version}'
+main: me.evlad.naturalshulkerspawn.NaturalShulkerSpawn
+api-version: 1.18
+commands:
+  nss:
+    description: Reloads the plugin
+    usage: /<command>
+    permission: naturalshulkerspawn.*
+    aliases:
+      - naturalshulkerspawn
+permissions:
+  naturalshulkerspawn.*:
+    description: Access all commands
+    default: op

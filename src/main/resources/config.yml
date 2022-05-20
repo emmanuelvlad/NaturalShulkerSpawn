@@ -1,0 +1,4 @@
+spawning-chance: 1
+spawnable-surfaces:
+  - PURPUR_BLOCK
+break-surface-on-spawn: false
