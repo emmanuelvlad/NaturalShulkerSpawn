@@ -1,4 +1,10 @@
+# PERCENTAGE UP TO 100
+# Example: 1 = 1%
 spawning-chance: 1
+# List of surfaces:
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+# spawnable-surfaces: [] # To set on all surfaces
 spawnable-surfaces:
   - PURPUR_BLOCK
+# Should break the block under it after spawning?
 break-surface-on-spawn: false

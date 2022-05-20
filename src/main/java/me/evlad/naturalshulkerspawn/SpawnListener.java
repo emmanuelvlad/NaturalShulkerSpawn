@@ -39,7 +39,7 @@ public class SpawnListener implements Listener {
                     .map(Material::valueOf)
                     .collect(Collectors.toList());
             Block spawnedOnBlock = spawnLocationWorld.getBlockAt(spawnLocation.getBlockX(), spawnLocation.getBlockY() - 1, spawnLocation.getBlockZ());
-            if (!spawnableSurfaces.contains(spawnedOnBlock.getBlockData().getMaterial()))
+            if (!spawnableSurfaces.contains(spawnedOnBlock.getBlockData().getMaterial()) && spawnableSurfaces.size() > 0)
                 return;
 
             event.setCancelled(true);
