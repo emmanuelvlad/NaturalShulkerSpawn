@@ -45,7 +45,7 @@ public class SpawnListener implements Listener {
             event.setCancelled(true);
             spawnLocationWorld.spawnEntity(spawnLocation, EntityType.SHULKER);
             if (config.getBoolean("break-surface-on-spawn")) {
-                spawnLocationWorld.setBlockData(spawnLocation.getBlockX(), spawnLocation.getBlockY() - 1, spawnLocation.getBlockZ(), spawnedOnBlock.getBlockData());
+                spawnLocationWorld.setBlockData(spawnedOnBlock.getLocation(), Material.AIR.createBlockData());
             }
         }
     }
